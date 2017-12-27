@@ -2,6 +2,7 @@ function I2 = quilladinButter(I20, param1, param2, A)
 
 %param1 = Do
 %param2 = n
+%A = amplitud
 
 
 J = imresize(I20,[165 120]);

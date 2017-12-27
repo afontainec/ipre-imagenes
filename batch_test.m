@@ -66,6 +66,7 @@ for t=1:n
         end
         
         fst = [op.descriptor '/' fname];
+        fst = strrep(fst,'.',',');
         fprintf('computing %3d/%3d > %s...\n',t,nT,fst);
         switch op.descriptor
             % case 'sift','dsift','surf','bow' ???

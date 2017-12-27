@@ -1,4 +1,4 @@
-function W = Tony(I, n, y)
+function W = tony(I, n, y)
 I = im2double(I);
 %% SHARPEN
 F = conv2(I,ones(n,n)/n^2,'same');

@@ -10,9 +10,9 @@ close all
 if not(exist('show','var'))
     show = 1;
 end
-
-data = load(['results/' op.descriptor '/' f1]); op1 = data.op;
-data = load(['results/' op.descriptor '/' f2]); op2 = data.op;
+disp(f2)
+data = load(['results/' descriptor '/' f1]); op1 = data.op;
+data = load(['results/' descriptor '/' f2]); op2 = data.op;
 
 
 
