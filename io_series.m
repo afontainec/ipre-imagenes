@@ -4,8 +4,8 @@
 % Example 1: f1 = '14'; f2s = {'01_OOF_001'}; % comparison with only one
 % Example 1: f1 = '14'; f2s = {'01_OOF*'};    % comparison with many
 
-f1   = '01_MED_007_0,1';  % Cambiar aca el nombre del archivo
-f2s = {'03_BLIND*'};
+f1   = '01_MED_009_0,1';  % Cambiar aca el nombre del archivo
+f2s = {'03_QUILLADINBUTTER*'};
 descriptor = 'lbp';
 
 show = 0;

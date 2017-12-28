@@ -6,10 +6,14 @@ function XX = fx_descriptor(op,opfx)
 % parameters of degradation
 opdeg.par1 = op.degpar1;
 opdeg.par2 = op.degpar2;
+opdeg.par3 = op.degpar3;
+
 
 % parameters of restoration
 opres.par1 = op.respar1;
 opres.par2 = op.respar2;
+% opres.par3 = op.respar3;
+
 
 % op.deg and op.res are the degaradtion and restoration method? name
 deg = not(strcmp(op.deg,'nothing')); % 'nothing' means no degradation

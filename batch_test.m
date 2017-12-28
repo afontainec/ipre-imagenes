@@ -23,10 +23,13 @@ for t=1:n
         op.deg          = lower(char(T.Degradation(t)));
         op.degpar1      = T.ParDeg1(t);
         op.degpar2      = T.ParDeg2(t);
+        op.degpar3      = T.ParDeg3(t);
         op.res          = lower(char(T.Restoration(t)));
         op.respar1      = T.ParRes1(t);
         op.respar2      = T.ParRes2(t);
         fname           = char(T.Output(t));
+        disp('------------------------------------------------');
+        disp(op.degpar3);
         if strcmp(fname,'auto')==1
             fname = num2fixstr(op.img,2);
             if strcmp(op.deg,'nothing')==0
@@ -35,7 +38,11 @@ for t=1:n
                     fname = [fname '_' num2fixstr(op.degpar1,3)];
                     if op.degpar2>0
                         fname = [fname '_' num2fixstr(op.degpar2,3)];
+                        if op.degpar3>0
+                            fname = [fname '_' num2fixstr(op.degpar3,3)];
+                        end
                     end
+                    
                 end
                 wert = wert + 1;
             end

@@ -40,8 +40,14 @@ switch lower(method)
         I   = imfilter(I,options.par1);
     case 'quilladin'
         I = quilladin(I, options.par1, options.par2);
+    case 'quilladinbutter'
+        I = quilladinButter(I, options.par1, options.par2, options.par3);
     case 'tony'
         I = tony(I, options.par1, options.par2);
     case 'med'
         I = medfilt2(I, [options.par1 options.par1]);
+    if(endsWith(lower(method), '++'))
+        I(I>1) = 1;
+        I(I<0) = 0;
+    end
 end
