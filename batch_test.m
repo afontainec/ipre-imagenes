@@ -127,8 +127,6 @@ for t=1:n
         XX = fx_descriptor(op,opfx);
         op.x = single(XX);
         if not(isempty(fname))
-            disp('fst');
-            disp(fst);
             save(['results/' fst],'op');
         end
     end
