@@ -28,8 +28,6 @@ for t=1:n
         op.respar1      = T.ParRes1(t);
         op.respar2      = T.ParRes2(t);
         fname           = char(T.Output(t));
-        disp('------------------------------------------------');
-        disp(op.degpar3);
         if strcmp(fname,'auto')==1
             fname = num2fixstr(op.img,2);
             if strcmp(op.deg,'nothing')==0
@@ -129,6 +127,8 @@ for t=1:n
         XX = fx_descriptor(op,opfx);
         op.x = single(XX);
         if not(isempty(fname))
+            disp('fst');
+            disp(fst);
             save(['results/' fst],'op');
         end
     end

@@ -4,8 +4,8 @@
 % Example 1: f1 = '14'; f2s = {'01_OOF_001'}; % comparison with only one
 % Example 1: f1 = '14'; f2s = {'01_OOF*'};    % comparison with many
 
-f1   = '01_MED_009_0,1';  % Cambiar aca el nombre del archivo
-f2s = {'03_QUILLADINBUTTER*'};
+f1   = '01_MED_005_0,1';  % Cambiar aca el nombre del archivo
+f2s = { '03_REG_015_017', '03_REG_015_016'  };
 descriptor = 'lbp';
 
 show = 0;
@@ -73,7 +73,7 @@ axis([0 nr 0 100])
 xlabel('rank')
 ylabel('cumulative score')
 
-APR(1) = 0;
+% APR(1) = 0; %% WHAT IS THIS LINE FOR?
 
 [myp,jj] = max(APR);
 fprintf('Best:\n');
@@ -84,7 +84,7 @@ else
     f2 = f2s{jj};
 end
 
-fprintf('%10s/%-25s: Pr = %5.2f @ Re = %5.2f APR = %5.2f\n',f1,f2,yp,xp,myp)
+fprintf('%10s/%-25s: Pr = %5.2f @ Re = %5.2f APR = %5.4f\n',f1,f2,yp,xp,myp)
 
 
 % jjj = [1 jj];

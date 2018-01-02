@@ -124,7 +124,7 @@ warning off
 th = (X'*X)\X'*y;
 warning on
 yp = [xp 1]*th;
-fprintf('%10s/%-25s: Pr = %5.2f @ Re = %5.2f APR = %5.2f\n',f1,f2,yp,xp,APrRe)
+fprintf('%10s/%-25s: Pr = %5.2f @ Re = %5.2f APR = %5.4f\n',f1,f2,yp,xp,APrRe)
 %fprintf('Rank:\n');
 cc = sum(Rk);
 ct = [0 cc]';

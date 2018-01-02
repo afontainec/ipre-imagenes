@@ -31,7 +31,7 @@ N  = 100; % numer of images
 %     XX = op.x;
 % end
 
-if op.ini==0 % op.ini must be 1 to extract the features
+if op.ini==0 % op.ini must be 1 to extract the features %% HELP: QUE ES ESTO
     XX = op.x;
 end
 
@@ -70,7 +70,7 @@ for i=1:N
         % the description is extracted using function op.fx_function with
         % parameters opfx
         x = feval(op.fx_function,I,opfx);
-        if op.size == 0
+        if op.size == 0 %% QUE ES ESTO
             op.size = length(x);
             XX = zeros(N,op.size);
             fprintf('descriptor has %d elements.\n',op.size);
