@@ -1,38 +1,38 @@
 function k = blur_index(I)
 [W, H] = size(I);
 if(W == 66)
-    k = 1;
+    k = 51;
 elseif(W == 33)
-    k = 2;
+    k = 52;
 elseif(W == 22)
-    k = 3;
+    k = 53;
 elseif(W == 11)
-    k = 4;
+    k = 54;
 elseif(W == 7)
-    k = 5;
+    k = 55;
 else
     blur = fmeasure(I, 'LAPE');
     if(blur >= 31)
-        k = 6;
+        k = 56;
     elseif(blur >= 20)
-        k = 7;
+        k = 57;
     elseif(blur >= 18.3)
-        k = 8;
+        k = 58;
     elseif(blur >= 17.6)
-        k = 9;
+        k = 59;
     elseif(blur >= 10.3)
-        k = 10;
+        k = 60;
     elseif(blur >= 7.86)
-        k = 11;
+        k = 61;
     elseif(blur >= 5.1)
-        k = 12;
+        k = 62;
     elseif(blur >= 3.6)
-        k = 13;
+        k = 63;
     elseif(blur >= 2.9)
-        k = 14;
+        k = 64;
     elseif(blur >= 1.66)
-        k = 15;
+        k = 65;
     else
-       k = 16;
+       k = 66;
     end
 end
