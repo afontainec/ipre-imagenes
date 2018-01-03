@@ -5,8 +5,7 @@
 % Example 1: f1 = '14'; f2s = {'01_OOF*'};    % comparison with many
 
 f1   = '51/comparison/MED_003';  % Cambiar aca el nombre del archivo
-f2s = { '51/blurred/REG*'};
-
+f2s = { '51/'};
 descriptor = 'lbp';
 
 show = 0;
@@ -18,14 +17,9 @@ f1t = f1;
 f1t(x) = '-';
 
 f2o = f2s{1};
-
 if f2o(end)=='*'
     dl = dir(['results/' descriptor '/' f2o]);
     n2 = length(dl);
-    folders = strsplit(f2o, '/');
-    for it = 1:n2
-        dl(it).name = [folders{1} '/' folders{2} '/' dl(it).name];
-    end
     f2dir = 1;
 else
     n2 = length(f2s);
@@ -42,7 +36,7 @@ APR = [];
 for i2=1:n2
     if f2dir==1
         f2 = dl(i2).name;
-        f2(end-3:end) = []; %% removes .mat
+        f2(end-3:end) = [];
     else
         f2 = f2s{i2};
     end
