@@ -23,11 +23,8 @@ res = not(strcmp(op.res,'nothing')); % 'nothing' means no restoration
 % all 100 images op.img of AR are extracted
 sq = ['_' num2fixstr(op.img,op.imgdig) '.png'];
 
-folder = [op.fpath num2fixstr(op.img,op.imgdig) '/' op.prefix];
-disp(folder);
-a = dir([folder '/*.png']);
-N  = size(a,1); % numer of images
-disp(N);
+
+N  = 100; % numer of images
 
 % if op.ini==1 % op.ini must be 1 to extract the features
 %     XX = zeros(N,op.size);
@@ -39,7 +36,7 @@ if op.ini==0 % op.ini must be 1 to extract the features %% HELP: QUE ES ESTO
     XX = op.x;
 end
 
-
+XX = []; %% HELP no se si esto esta bien que pueda ir
 ft = Bio_statusbar('extracting features');
 for i=1:N
     for j=1:12
@@ -81,7 +78,7 @@ for i=1:N
                     XX = zeros(N,op.size);
                     fprintf('descriptor has %d elements.\n',op.size);
                 end
-                XX(i, :) = x;
+                XX = cat(1, XX, x);
 
             end
         end

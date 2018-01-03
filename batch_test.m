@@ -47,9 +47,7 @@ for t=1:n
             if and(op.img>26,op.img<32)
                 fname = ['01_OOF_' num2fixstr(op.img-26,3)];
             end
-            
-            
-            
+           
             if strcmp(op.res,'nothing')==0
                 fname = [fname '_' upper(op.res)];
                 if op.respar1>0
@@ -125,7 +123,6 @@ for t=1:n
                 opfx.width        = 45;
                 op.size = opfx.hight*opfx.width;
         end
-        fst
         XX = fx_descriptor(op,opfx);
         op.x = single(XX);
         if not(isempty(fname))
