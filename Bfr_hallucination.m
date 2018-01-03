@@ -49,6 +49,7 @@ switch lower(method)
         
         im_l_y = im_l_ycbcr(:,:,1);
         im_h_y = SCN_Matconvnet(im_l_y, model,up_scale,use_gpu);
+        disp(im_h_y);
         im_h_y = im_h_y * 255;
         
         im_h_ycbcr = imresize(im_l_ycbcr,up_scale,'bicubic');

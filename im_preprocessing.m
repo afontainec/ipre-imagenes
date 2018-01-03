@@ -13,7 +13,7 @@ switch lower(method)
     case 'reg'
         PSF = fspecial('gaussian',options.par1,options.par1/8.5);
         PSF = PSF/sum(PSF(:));
-        I = deconvreg(I,PSF,options.par2);
+        I = deconvreg(I,PSF,options.par2/10);
     case {'imsharpen','sharp'}
         I = imsharpen(I,'Radius',options.par1,'Amount',options.par2/10);
     case 'lucy'
