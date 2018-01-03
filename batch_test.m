@@ -2,11 +2,9 @@ T = readtable(batchtable);
 n = height(T);
 nT = sum(T.Compute);
 clb
-wert = 0;
 
 clear op
-op.fpath       = 'images/faces_ar_lq/';
-op.prefix      = 'face_';
+op.fpath       = 'images/batches/';
 op.subdig      = 3;
 op.imgdig      = 2;
 op.ini         = 1;
@@ -14,12 +12,14 @@ op.gray        = 1;
 if not(exist('net_loaded','var'))
     net_loaded = false;
 end
+disp(op);
 
 for t=1:n
     disp('column');
     disp(t);
     if T.Compute(t) == 1
         op.img          = T.Image(t);
+        op.prefix          = [lower(char(T.Prefix(t))) '/'];
         op.deg          = lower(char(T.Degradation(t)));
         op.degpar1      = T.ParDeg1(t);
         op.degpar2      = T.ParDeg2(t);
@@ -29,9 +29,9 @@ for t=1:n
         op.respar2      = T.ParRes2(t);
         fname           = char(T.Output(t));
         if strcmp(fname,'auto')==1
-            fname = num2fixstr(op.img,2);
+            fname = [num2fixstr(op.img,2) '/' op.prefix];
             if strcmp(op.deg,'nothing')==0
-                fname = [fname '_' upper(op.deg)];
+                fname = [fname upper(op.deg)];
                 if op.degpar1>0
                     fname = [fname '_' num2fixstr(op.degpar1,3)];
                     if op.degpar2>0
@@ -42,7 +42,6 @@ for t=1:n
                     end
                     
                 end
-                wert = wert + 1;
             end
             
             if and(op.img>26,op.img<32)
@@ -64,14 +63,16 @@ for t=1:n
         
         
         op.descriptor      = lower(char(T.Descriptor(t)));
-        dir_results = ['results/' op.descriptor ]; 
+        op.prefix
+        dir_results = ['results/' op.descriptor '/' num2fixstr(op.img,2) '/' op.prefix]; 
+        disp(dir_results);
         if not(exist(dir_results,'dir'))
             fprintf('making directory %s...\n',op.descriptor)
             mkdir(dir_results)
         end
-        
         fst = [op.descriptor '/' fname];
         fst = strrep(fst,'.',',');
+        fst
         fprintf('computing %3d/%3d > %s...\n',t,nT,fst);
         switch op.descriptor
             % case 'sift','dsift','surf','bow' ???
@@ -124,6 +125,7 @@ for t=1:n
                 opfx.width        = 45;
                 op.size = opfx.hight*opfx.width;
         end
+        fst
         XX = fx_descriptor(op,opfx);
         op.x = single(XX);
         if not(isempty(fname))

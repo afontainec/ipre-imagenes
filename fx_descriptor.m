@@ -22,7 +22,7 @@ res = not(strcmp(op.res,'nothing')); % 'nothing' means no restoration
 
 % all 100 images op.img of AR are extracted
 sq = ['_' num2fixstr(op.img,op.imgdig) '.png'];
-
+disp(op.img);
 N  = 100; % numer of images
 
 % if op.ini==1 % op.ini must be 1 to extract the features
