@@ -1,5 +1,0 @@
-for i = 1:100
-    for j = 1:12
-        str = ['images/face_ar_ql
-    end
-end

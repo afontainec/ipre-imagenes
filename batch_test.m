@@ -12,11 +12,8 @@ op.gray        = 1;
 if not(exist('net_loaded','var'))
     net_loaded = false;
 end
-disp(op);
 
 for t=1:n
-    disp('column');
-    disp(t);
     if T.Compute(t) == 1
         op.img          = T.Image(t);
         op.prefix          = [lower(char(T.Prefix(t))) '/'];
@@ -61,16 +58,13 @@ for t=1:n
         
         
         op.descriptor      = lower(char(T.Descriptor(t)));
-        op.prefix
         dir_results = ['results/' op.descriptor '/' num2fixstr(op.img,2) '/' op.prefix]; 
-        disp(dir_results);
         if not(exist(dir_results,'dir'))
             fprintf('making directory %s...\n',op.descriptor)
             mkdir(dir_results)
         end
         fst = [op.descriptor '/' fname];
         fst = strrep(fst,'.',',');
-        fst
         fprintf('computing %3d/%3d > %s...\n',t,nT,fst);
         switch op.descriptor
             % case 'sift','dsift','surf','bow' ???
