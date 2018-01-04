@@ -4,11 +4,11 @@
 % Example 1: f1 = '14'; f2s = {'01_OOF_001'}; % comparison with only one
 % Example 1: f1 = '14'; f2s = {'01_OOF*'};    % comparison with many
 
-% if(exist('fixed') == 0)
-%     disp('setting f1 and f2s');
+if(exist('fixed') == 0)
+    disp('setting f1 and f2s');
     f1   = '55/comparison/GAUSS_027';  % Cambiar aca el nombre del archivo
     f2s = { '55/blurred/BLIND*'};
-% end
+end
 
 
 
