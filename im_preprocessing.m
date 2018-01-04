@@ -57,7 +57,7 @@ switch lower(method)
         I = quilladinButter(I, options.par1, options.par2, options.par3);
     case 'tony'
         I = imresize(I,[165 120]);
-        I = tony(I, options.par1, options.par2);
+        I = tony(I, options.par1, options.par2/10);
     case 'med'
         I = medfilt2(I, [options.par1 options.par1]);
 end
