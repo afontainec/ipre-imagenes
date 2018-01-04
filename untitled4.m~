@@ -1,0 +1,11 @@
+f1 = {'MED'};
+f1_params = {'_0019'};
+images = [51 52 53 54 55];
+
+
+for i = 1:length(f1)
+    for j = 1:length(f1_params)
+        for k = 1:length(images)
+            disp([f1{i} f1
+    end
+end

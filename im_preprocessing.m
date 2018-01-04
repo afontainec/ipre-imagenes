@@ -40,6 +40,8 @@ switch lower(method)
         % SUPER RESOLUTION
     case 'scn'
         I = Bfr_hallucination(I,options.par1,'scn');
+       case 'scsr'
+        I = Bfr_hallucination(I,options.par1,'scsr');
         % DEGRADATION
     case {'gaussian','gauss'}
         PSF = fspecial('gaussian',options.par1,options.par1/8.5);
@@ -54,6 +56,7 @@ switch lower(method)
         I = imresize(I,[165 120]);
         I = quilladinButter(I, options.par1, options.par2, options.par3);
     case 'tony'
+        I = imresize(I,[165 120]);
         I = tony(I, options.par1, options.par2);
     case 'med'
         I = medfilt2(I, [options.par1 options.par1]);

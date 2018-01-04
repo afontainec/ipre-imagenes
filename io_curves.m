@@ -10,7 +10,7 @@ close all
 if not(exist('show','var'))
     show = 1;
 end
-disp(f2)
+% disp(f2)
 data = load(['results/' descriptor '/' f1]); op1 = data.op;
 data = load(['results/' descriptor '/' f2]); op2 = data.op;
 
@@ -124,7 +124,7 @@ warning off
 th = (X'*X)\X'*y;
 warning on
 yp = [xp 1]*th;
-fprintf('%10s/%-25s: Pr = %5.2f @ Re = %5.2f APR = %5.4f\n',f1,f2,yp,xp,APrRe)
+% fprintf('%10s/%-25s: Pr = %5.2f @ Re = %5.2f APR = %5.4f\n',f1,f2,yp,xp,APrRe)
 %fprintf('Rank:\n');
 cc = sum(Rk);
 ct = [0 cc]';

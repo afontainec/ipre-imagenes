@@ -27,7 +27,6 @@ for t=1:n
         fname           = char(T.Output(t));
         if strcmp(fname,'auto')==1
             fname = [num2fixstr(op.img,2) '/' op.prefix];
-            if strcmp(op.deg,'nothing')==0
                 fname = [fname upper(op.deg)];
                 if op.degpar1>0
                     fname = [fname '_' num2fixstr(op.degpar1,3)];
@@ -39,7 +38,6 @@ for t=1:n
                     end
                     
                 end
-            end
             
             if and(op.img>26,op.img<32)
                 fname = ['01_OOF_' num2fixstr(op.img-26,3)];
